@@ -4,6 +4,7 @@ package br.com.unesa.visao;
  * @author Jonas Silva Carvalho<jonasloop1@gmail.com>
  * @author Gabriel Henrique Santos Marques<gabrielmarques142@gmail.com>
  * @author Marlon Ribeiro da Silva<marlonribeirodasilva@outlook.com.br>
+ * @author Victor Augusto Fonseca da Silva<victorfonsecass@outlook.com>
  * @brief  Tela de cadastro do usuario
  * @date 29/09/2020
  */
