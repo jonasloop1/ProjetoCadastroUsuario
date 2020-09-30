@@ -9,5 +9,5 @@ package br.com.unesa.modelo;
  * @date 29/09/2020
  */
 public class Cliente {
-    
+    private String name;
 }
