@@ -12,4 +12,5 @@ package br.com.unesa.modelo;
 public class Cliente {
     private String name;
     private String  sexo;
+    
 }
