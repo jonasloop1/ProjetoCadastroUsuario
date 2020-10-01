@@ -20,8 +20,7 @@ public class Cliente {
     private String formacao;
     private String habilitacao;
 
-    public Cliente() {
-    }
+    public Cliente() {}
 
     public Cliente(String cpf, String nome, String idade, String email, String sexo, String profissao, String formacao, String habilitacao) {
         this.cpf = cpf;
@@ -32,5 +31,5 @@ public class Cliente {
         this.profissao = profissao;
         this.formacao = formacao;
         this.habilitacao = habilitacao;
-    }//Fiz apenas o construto, fui dormir pq estava cheio de sono, caso contrario, teria feito mais coisas!!!!!!!!!!!!!!!!!
+    }
 }
