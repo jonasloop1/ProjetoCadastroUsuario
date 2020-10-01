@@ -23,7 +23,7 @@ public class ClienteDAO {
         try{
             cx.close();
         }catch(SQLException ex){
-            System.out.println("Erro de exeção SQL");
+            System.out.println("Erro de exceção SQL");
         }
     }
 }
