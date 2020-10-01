@@ -11,18 +11,19 @@ package br.com.unesa.modelo;
  */
 public class Cliente {
 
-    private String cpf;
-    private String nome;
-    private String idade;
-    private String email;
-    private String sexo;
-    private String profissao;
-    private String formacao;
-    private String habilitacao;
+    public int id;
+    public String cpf;
+    public String nome;
+    public String idade;
+    public String email;
+    public String sexo;
+    public String profissao;
+    public String formacao;
+    public String habilitacao;
 
     public Cliente() {}
 
-    public Cliente(String cpf, String nome, String idade, String email, String sexo, String profissao, String formacao, String habilitacao) {
+    public Cliente(int id, String cpf, String nome, String idade, String email, String sexo, String profissao, String formacao, String habilitacao) {
         this.cpf = cpf;
         this.nome = nome;
         this.idade = idade;
