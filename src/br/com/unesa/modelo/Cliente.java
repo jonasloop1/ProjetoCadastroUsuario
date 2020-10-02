@@ -24,6 +24,7 @@ public class Cliente {
     public Cliente() {}
 
     public Cliente(int id, String cpf, String nome, String idade, String email, String sexo, String profissao, String formacao, String habilitacao) {
+        this.id = id;
         this.cpf = cpf;
         this.nome = nome;
         this.idade = idade;

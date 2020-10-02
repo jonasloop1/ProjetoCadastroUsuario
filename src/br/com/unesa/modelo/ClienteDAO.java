@@ -77,4 +77,14 @@ public class ClienteDAO {
         }
         return listaCliente;
     }
+    
+    public void buscar(){}
 }
+
+
+
+
+
+
+
+
