@@ -22,4 +22,12 @@ public class ControleCliente {
     public List<Cliente> ObterListar(){
        return Cdao.listar();
     }
+    
+    public void alterar(Cliente client){
+        Cdao.alterar(client);
+    }
+    
+    public List<Cliente> buscar(){
+        return Cdao.buscar();
+    }
 }

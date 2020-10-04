@@ -33,5 +33,5 @@ public class Cliente {
         this.profissao = profissao;
         this.formacao = formacao;
         this.habilitacao = habilitacao;
-    }
+    }  
 }
