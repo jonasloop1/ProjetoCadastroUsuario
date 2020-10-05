@@ -7,7 +7,7 @@ package br.com.unesa.modelo;
  * @author Marlon Ribeiro da Silva<marlonribeirodasilva@outlook.com.br>
  * @author Victor Augusto Fonseca da Silva<victorfonsecass@outlook.com>
  * @brief Classe que guarda dados do usuário.
- * @date 29/09/2020
+ * @date 29/09/2020.
  */
 public class Cliente {
 

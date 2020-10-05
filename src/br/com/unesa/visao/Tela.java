@@ -9,16 +9,14 @@ import javax.swing.JOptionPane;
  * @author Gabriel Henrique Santos Marques<gabrielmarques142@gmail.com>
  * @author Marlon Ribeiro da Silva<marlonribeirodasilva@outlook.com.br>
  * @author Victor Augusto Fonseca da Silva<victorfonsecass@outlook.com>
- * @brief Tela de cadastro do usuario
+ * @brief Tela de cadastro do usuario.
  * @date 29/09/2020
  */
 public class Tela extends javax.swing.JFrame {
 
     ControleCliente controle = new ControleCliente();
-
     public Tela() {
         initComponents();
-
     }
 
     @SuppressWarnings("unchecked")
@@ -234,8 +232,8 @@ public class Tela extends javax.swing.JFrame {
                     .addComponent(caixanome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(caixaemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
