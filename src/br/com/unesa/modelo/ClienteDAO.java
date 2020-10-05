@@ -29,7 +29,7 @@ public class ClienteDAO {
         try {
             cx.close();
         } catch (SQLException ex) {
-            System.out.println("Erro de exceção SQL");
+            System.out.println("Erro de exceção SQL-close");
         }
     }
 
@@ -50,7 +50,7 @@ public class ClienteDAO {
             st.setString(9, client.habilitacao);
             st.executeUpdate();
         } catch (ClassNotFoundException | SQLException ex) {
-            System.out.println("Erro de exceção.");
+            System.out.println("Erro de exceção.-incluir");
         } finally {
             closeConnection(cx1);
         }
@@ -71,7 +71,7 @@ public class ClienteDAO {
                         resultado.getString(7), resultado.getString(8), resultado.getString(9)));
             }
         } catch (ClassNotFoundException | SQLException ex) {
-            System.out.println("Erro de exceção.");
+            System.out.println("Erro de exceção.-listar");
         } finally {
             closeConnection(cx1);
         }
@@ -93,7 +93,7 @@ public class ClienteDAO {
                         resultado.getString(7), resultado.getString(8), resultado.getString(9)));
             }
         } catch (ClassNotFoundException | SQLException ex) {
-            System.out.println("Erro de exceção.");
+            System.out.println("Erro de exceção.-Buscar");
         } finally {
             closeConnection(cx1);
         }
@@ -118,7 +118,7 @@ public class ClienteDAO {
             st.setInt(1, client.id);
             st.executeUpdate();
         } catch (ClassNotFoundException | SQLException ex) {
-            System.out.println("Erro de exceção.");
+            System.out.println("Erro de exceção.-alterar");
         } finally {
             closeConnection(cx1);
         }
