@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 public class Tela extends javax.swing.JFrame {
 
     ControleCliente controle = new ControleCliente();
+    
     public Tela() {
         initComponents();
     }
@@ -47,11 +48,11 @@ public class Tela extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        habsimnao = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
         caixaid = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        boxsexo = new javax.swing.JComboBox<>();
+        caixasexo = new javax.swing.JTextField();
+        caixahab = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -128,20 +129,11 @@ public class Tela extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 204));
         jLabel11.setText("Possui Habilitação?");
 
-        habsimnao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sim", "Não" }));
-        habsimnao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                habsimnaoActionPerformed(evt);
-            }
-        });
-
         jLabel12.setForeground(new java.awt.Color(255, 255, 204));
         jLabel12.setText("ID:");
 
         jLabel13.setForeground(new java.awt.Color(255, 255, 204));
         jLabel13.setText("Sexo:");
-
-        boxsexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "M", "F" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -158,46 +150,6 @@ public class Tela extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel13)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(boxsexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGap(11, 11, 11)
-                                            .addComponent(jLabel11)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(habsimnao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(5, 5, 5)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel7)
-                                                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
-                                                    .addComponent(jLabel6)
-                                                    .addComponent(jLabel5))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(caixaemail, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(caixaformacao, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(caixaidade, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(caixaprofissao, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(caixacpf, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addComponent(jLabel1)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(caixanome, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel12)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(caixaid, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(botbuscar)
                                 .addGap(18, 18, 18)
                                 .addComponent(boteditar)
@@ -207,7 +159,44 @@ public class Tela extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel10)
-                        .addGap(76, 76, 76))))
+                        .addGap(76, 76, 76))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel7)
+                                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
+                                            .addComponent(jLabel6)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel13))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(caixaemail, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                                            .addComponent(caixaformacao, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                                            .addComponent(caixaidade, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                                            .addComponent(caixaprofissao, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                                            .addComponent(caixacpf, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                                            .addComponent(caixasexo)))
+                                    .addComponent(jLabel1)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(caixanome, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(caixaid, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(caixahab, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botcadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,14 +240,14 @@ public class Tela extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(caixaformacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(boxsexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(caixasexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(habsimnao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(caixahab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addComponent(botcadastro)
                 .addGap(18, 18, 18)
@@ -298,10 +287,10 @@ public class Tela extends javax.swing.JFrame {
         cliente.nome = caixanome.getText();
         cliente.idade = caixaidade.getText();
         cliente.email = caixaemail.getText();
-        cliente.sexo = boxsexo.getActionCommand();
+        cliente.sexo = caixasexo.getText();
         cliente.profissao = caixaprofissao.getText();
         cliente.formacao = caixaformacao.getText();
-        cliente.habilitacao = habsimnao.getActionCommand();
+        cliente.habilitacao = caixahab.getText();
         controle.incluir(cliente);
 
         JOptionPane.showMessageDialog(rootPane, "Cadastro feito com sucesso!");
@@ -311,10 +300,10 @@ public class Tela extends javax.swing.JFrame {
         caixanome.setText("");
         caixaidade.setText("");
         caixaemail.setText("");
-        boxsexo.setActionCommand("");
+        caixasexo.setText("");
         caixaprofissao.setText("");
         caixaformacao.setText("");
-        habsimnao.setActionCommand("");
+        caixahab.setText("");
 
 
     }//GEN-LAST:event_botcadastroActionPerformed
@@ -334,10 +323,6 @@ public class Tela extends javax.swing.JFrame {
     private void botlistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botlistarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botlistarActionPerformed
-
-    private void habsimnaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_habsimnaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_habsimnaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -379,15 +364,15 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JButton botcadastro;
     private javax.swing.JButton boteditar;
     private javax.swing.JButton botlistar;
-    private javax.swing.JComboBox<String> boxsexo;
     private javax.swing.JTextField caixacpf;
     private javax.swing.JTextField caixaemail;
     private javax.swing.JTextField caixaformacao;
+    private javax.swing.JTextField caixahab;
     private javax.swing.JTextField caixaid;
     private javax.swing.JTextField caixaidade;
     private javax.swing.JTextField caixanome;
     private javax.swing.JTextField caixaprofissao;
-    private javax.swing.JComboBox<String> habsimnao;
+    private javax.swing.JTextField caixasexo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
