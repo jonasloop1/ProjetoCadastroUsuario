@@ -39,7 +39,7 @@ public class ClienteDAO {
             cx1 = getConnection();
             PreparedStatement st = cx1.prepareStatement(
                     "INSERT INTO CADASTRO VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            st.setInt(1, client.id);
+            st.setInt(1, client.getId());
             st.setString(2, client.cpf);
             st.setString(3, client.nome);
             st.setString(4, client.idade);
@@ -78,14 +78,14 @@ public class ClienteDAO {
         return listaCliente;
     }
 
- public List<Cliente> buscar() {
+public List<Cliente> buscar() {
         ArrayList<Cliente> buscarCliente = new ArrayList();
         Connection cx1 = null;
 
         try {
             cx1 = getConnection();
             Statement estado = cx1.createStatement();
-            ResultSet resultado = estado.executeQuery("SELECT * FROM CADASTRO WHERE ID=?");
+            ResultSet resultado = estado.executeQuery("SELECT ID FROM CADASTRO");
             while (resultado.next()) {
                 buscarCliente.add(new Cliente(
                         resultado.getInt(1), resultado.getString(2), resultado.getString(3),
@@ -107,15 +107,15 @@ public class ClienteDAO {
             PreparedStatement st = cx1.prepareStatement(
                     "UPTADE CADASTRO SET CPF=?, NOME=?, IDADE=?, EMAIL=?, SEXO=?, PROFISSAO=?, FORMACAO=?, HABILITACAO=? WHERE ID=?");
 
-            st.setString(2, client.cpf);
-            st.setString(3, client.nome);
-            st.setString(4, client.idade);
-            st.setString(5, client.email);
-            st.setString(6, client.sexo);
-            st.setString(7, client.profissao);
-            st.setString(8, client.formacao);
-            st.setString(9, client.habilitacao);
-            st.setInt(1, client.id);
+            st.setString(1, client.getCpf());
+            st.setString(2, client.getNome());
+            st.setString(3, client.getIdade());
+            st.setString(4, client.getEmail());
+            st.setString(5, client.getSexo());
+            st.setString(6, client.getProfissao());
+            st.setString(7, client.getFormacao());
+            st.setString(8, client.getHabilitacao());
+            st.setInt(9, client.getId());
             st.executeUpdate();
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println("Erro de exceção.-alterar");

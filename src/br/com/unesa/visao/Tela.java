@@ -15,7 +15,8 @@ import javax.swing.JOptionPane;
 public class Tela extends javax.swing.JFrame {
 
     ControleCliente controle = new ControleCliente();
-    
+    Cliente cliente = new Cliente();
+
     public Tela() {
         initComponents();
     }
@@ -41,8 +42,6 @@ public class Tela extends javax.swing.JFrame {
         caixaprofissao = new javax.swing.JTextField();
         caixaidade = new javax.swing.JTextField();
         caixaformacao = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        telamensagem = new javax.swing.JTextArea();
         boteditar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -53,6 +52,7 @@ public class Tela extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         caixasexo = new javax.swing.JTextField();
         caixahab = new javax.swing.JTextField();
+        caixaBuscar = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,10 +108,6 @@ public class Tela extends javax.swing.JFrame {
             }
         });
 
-        telamensagem.setColumns(20);
-        telamensagem.setRows(5);
-        jScrollPane1.setViewportView(telamensagem);
-
         boteditar.setText("Editar");
         boteditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,6 +131,12 @@ public class Tela extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(255, 255, 204));
         jLabel13.setText("Sexo:");
 
+        caixaBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                caixaBuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -146,16 +148,6 @@ public class Tela extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(botbuscar)
-                                .addGap(18, 18, 18)
-                                .addComponent(boteditar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botlistar)))
-                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel10)
@@ -192,15 +184,24 @@ public class Tela extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(caixaid, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(caixahab, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botcadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79))
+                                .addGap(59, 59, 59)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(botcadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(caixahab, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(botbuscar)
+                        .addGap(18, 18, 18)
+                        .addComponent(boteditar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botlistar)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(caixaBuscar)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,16 +249,16 @@ public class Tela extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(caixahab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botcadastro)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(25, 25, 25)
+                .addComponent(caixaBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botbuscar)
                     .addComponent(boteditar)
                     .addComponent(botlistar))
-                .addContainerGap())
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -281,16 +282,16 @@ public class Tela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botcadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botcadastroActionPerformed
-        Cliente cliente = new Cliente();
-        cliente.id = Integer.parseInt(caixaid.getText());
-        cliente.cpf = caixacpf.getText();
-        cliente.nome = caixanome.getText();
-        cliente.idade = caixaidade.getText();
-        cliente.email = caixaemail.getText();
-        cliente.sexo = caixasexo.getText();
-        cliente.profissao = caixaprofissao.getText();
-        cliente.formacao = caixaformacao.getText();
-        cliente.habilitacao = caixahab.getText();
+  
+        cliente.setId(Integer.parseInt(caixaid.getText()));
+        cliente.setCpf(caixacpf.getText());
+        cliente.setNome(caixanome.getText());
+        cliente.setIdade(caixaidade.getText());
+        cliente.setEmail(caixaemail.getText());
+        cliente.setSexo(caixasexo.getText());
+        cliente.setProfissao(caixaprofissao.getText());
+        cliente.setFormacao(caixaformacao.getText());
+        cliente.setHabilitacao(caixahab.getText());
         controle.incluir(cliente);
 
         JOptionPane.showMessageDialog(rootPane, "Cadastro feito com sucesso!");
@@ -313,20 +314,51 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_caixaemailActionPerformed
 
     private void botbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botbuscarActionPerformed
-        // TODO add your handling code here:
+            controle.buscar().forEach((cliente) -> {
+            JOptionPane.showMessageDialog(rootPane, cliente.getId() + ", " + cliente.getCpf() + ", " + cliente.getNome() + ", " + cliente.getIdade()+", "
+                    + cliente.getEmail() + ", " + cliente.getSexo() + ", " + cliente.getProfissao() + ", " + cliente.getFormacao() + ", "
+                    + cliente.getHabilitacao());
+        });
     }//GEN-LAST:event_botbuscarActionPerformed
 
     private void boteditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boteditarActionPerformed
-        // TODO add your handling code here:
+
+        cliente.setId(Integer.parseInt(caixaid.getText()));
+        cliente.setCpf(caixacpf.getText());
+        cliente.setNome(caixanome.getText());
+        cliente.setIdade(caixaidade.getText());
+        cliente.setEmail(caixaemail.getText());
+        cliente.setSexo(caixasexo.getText());
+        cliente.setProfissao(caixaprofissao.getText());
+        cliente.setFormacao(caixaformacao.getText());
+        cliente.setHabilitacao(caixahab.getText());
+        controle.alterar(cliente);
+        
+        JOptionPane.showMessageDialog(rootPane, "Atualização feita com sucesso!");
+
+        caixaid.setText("");
+        caixacpf.setText("");
+        caixanome.setText("");
+        caixaidade.setText("");
+        caixaemail.setText("");
+        caixasexo.setText("");
+        caixaprofissao.setText("");
+        caixaformacao.setText("");
+        caixahab.setText("");
+        
     }//GEN-LAST:event_boteditarActionPerformed
 
     private void botlistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botlistarActionPerformed
-        controle.ObterListar().forEach((cliente) ->{
-           JOptionPane.showMessageDialog(rootPane, cliente.id+", "+cliente.cpf+", "+cliente.nome+", "+cliente.idade+
-                    cliente.email+", "+cliente.sexo+", "+cliente.profissao+", "+cliente.formacao+
-                    cliente.habilitacao);
+        controle.ObterListar().forEach((cliente) -> {
+            JOptionPane.showMessageDialog(rootPane, cliente.getId() + ", " + cliente.getCpf() + ", " + cliente.getNome() + ", " + cliente.getIdade()
+                    + cliente.getEmail() + ", " + cliente.getSexo() + ", " + cliente.getProfissao() + ", " + cliente.getFormacao() + ", "
+                    + cliente.getHabilitacao());
         });
     }//GEN-LAST:event_botlistarActionPerformed
+
+    private void caixaBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caixaBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_caixaBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -368,6 +400,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JButton botcadastro;
     private javax.swing.JButton boteditar;
     private javax.swing.JButton botlistar;
+    private javax.swing.JTextField caixaBuscar;
     private javax.swing.JTextField caixacpf;
     private javax.swing.JTextField caixaemail;
     private javax.swing.JTextField caixaformacao;
@@ -391,7 +424,5 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea telamensagem;
     // End of variables declaration//GEN-END:variables
 }
