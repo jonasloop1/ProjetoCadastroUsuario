@@ -9,7 +9,7 @@ import java.util.List;
  * @author Marlon Ribeiro da Silva<marlonribeirodasilva@outlook.com.br>
  * @author Victor Augusto Fonseca da Silva<victorfonsecass@outlook.com>
  * @brief  Faz o controle dos usuarios.
- * @date 29/09/2020
+ * @date 29/09/2020.
  */
 public class ControleCliente {
     private ClienteDAO Cdao = new ClienteDAO();
