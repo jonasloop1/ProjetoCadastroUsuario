@@ -321,7 +321,11 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_boteditarActionPerformed
 
     private void botlistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botlistarActionPerformed
-        // TODO add your handling code here:
+        controle.ObterListar().forEach((cliente) ->{
+           JOptionPane.showMessageDialog(rootPane, cliente.id+", "+cliente.cpf+", "+cliente.nome+", "+cliente.idade+
+                    cliente.email+", "+cliente.sexo+", "+cliente.profissao+", "+cliente.formacao+
+                    cliente.habilitacao);
+        });
     }//GEN-LAST:event_botlistarActionPerformed
 
     /**
